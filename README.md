@@ -1,22 +1,89 @@
-# RAG YouTube Assistant - Chrome Extension
+# 📺 YouTube RAG Chatbot
 
-Quick extension to interact with the local RAG backend for YouTube videos.
+A powerful **Retrieval Augmented Generation (RAG)** application that
+allows users to chat with any YouTube video.\
+By analyzing video transcripts using advanced vector search and **Google
+Gemini 2.0 Flash**, this tool provides instant, context-aware answers.
 
-Install (development):
+It features a **premium Apple-style UI** built with React, a robust
+FastAPI backend, and a Chrome Extension for browsing-time assistance.
 
-1. Start your backend (FastAPI). Default assumed URL: `http://localhost:8000`.
-   - Example: `uvicorn backend.api_fast:app --reload --port 8000` from the repo root.
+## ✨ Features
 
-2. Load the extension in Chrome (or Edge):
+-   🎥 **Video Analysis** --- Fetches and processes YouTube transcripts
+    via API or fallback loaders.\
+-   🌐 **Multi-Language Support** --- Works with both English and Hindi
+    (with automatic translation).\
+-   🧠 **Smart RAG Pipeline** --- Uses LangChain + FAISS for embedding &
+    retrieval.\
+-   ⚡ **Instant Answers** --- Powered by Gemini 2.0 Flash for fast,
+    accurate responses.\
+-   🔍 **Vector Search** --- Uses `all-MiniLM-L6-v2` with MMR for
+    diverse result retrieval.\
+-   🧩 **Chrome Extension** --- Chat with YouTube videos directly on
+    YouTube.\
+-   🎨 **Premium UI** --- Glassmorphism, animations, dark theme, fully
+    responsive.
 
-   - Open `chrome://extensions`
-   - Enable "Developer mode"
-   - Click "Load unpacked" and select the `extension/` folder in the repo.
+## 🛠️ Tech Stack
 
-3. Open the extension popup, set Backend URL if different, paste a YouTube URL and click "Process".
-   - Wait until status shows "Ready".
-   - Ask questions using the popup's question box.
+### Frontend
 
-Notes:
-- The backend must have CORS enabled (the provided backend allows all origins).
-- If your backend uses a different port, set it in the popup `Backend URL` and click Save.
+-   React (Vite)
+-   Bootstrap 5 + Custom CSS
+-   Lucide React + FontAwesome
+
+### Backend
+
+-   FastAPI
+-   LangChain
+-   FAISS Vectorstore
+-   HuggingFace Embeddings
+-   Gemini 2.0 Flash
+-   youtube-transcript-api
+
+### Chrome Extension
+
+-   Manifest V3
+-   Popup UI
+-   DOM extraction for video metadata
+
+## 🚀 Getting Started
+
+### Backend Setup
+
+``` bash
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+### Frontend Setup
+
+``` bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Chrome Extension Setup
+
+1.  Open chrome://extensions/
+2.  Enable Developer Mode
+3.  Load unpacked → select extension folder
+
+## 📂 Project Structure
+
+    backend/
+    frontend/
+    extension/
+
+## 🤝 Contributing
+
+Fork → Modify → PR
+
+## 📄 License
+
+MIT
