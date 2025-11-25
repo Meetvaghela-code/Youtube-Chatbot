@@ -1,3 +1,5 @@
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/bb8688d8-5876-480d-90c1-4c8fcd2ba26d" />
+
 # 📺 YouTube RAG Chatbot
 
 A powerful **Retrieval Augmented Generation (RAG)** application that
